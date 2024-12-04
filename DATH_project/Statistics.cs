@@ -88,7 +88,9 @@ namespace DATH_project
 
         private void chartBtn_Click(object sender, EventArgs e)
         {
+            
             chart.Visible = true;
+            myChart.Series["Pie"].Points.Clear();
             myChart.Series["Pie"].IsValueShownAsLabel = true;
             for (int i = 0; i < getData.Count(); i++)
             {
