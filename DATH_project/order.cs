@@ -18,18 +18,11 @@ namespace DATH_project
         private List<WidgetData> drink;
         private String phone;
         private DateTime date;
-        private List<string> quantity;
+        private List<string> quantity; // lưu số lượng lấy từ google form
         private String total;
         private int totalQuantity;
-        public int getTotalQuantity(List<WidgetData> drinks)
-        {
-            int total = 0;
-            for (int i = 0; i < drinks.Count; i++)
-            {
-                total += drinks[i].quantity;
-            }
-            return total;
-        }
+        public String Total { get => total; set => total = value; }
+        public List<WidgetData> Drink { get => drink; set => drink = value; }
         public String OrderId { get {
                 return this.idNumber >= 10 ? $"DH{this.idNumber}" : $"DH0{this.IdNumber}";
             }
@@ -48,7 +41,8 @@ namespace DATH_project
         }
         public List<string> Quantity
         {
-            get { return quantity; } set { quantity = value; }
+            get { return quantity; }
+            set { quantity = value; }
         }
         public string Phone
         {
@@ -58,9 +52,16 @@ namespace DATH_project
         {
             return this.OrderId == find ? true : false;
         }
-        public String Total { get => total; set => total = value; }
-        public List<WidgetData> Drink { get => drink; set => drink = value; }
-        
+        public int getTotalQuantity(List<WidgetData> drinks)
+        {
+            int total = 0;
+            for (int i = 0; i < drinks.Count; i++)
+            {
+                total += drinks[i].quantity;
+            }
+            return total;
+        }
+
         public order() { }
         public order(double idNumber,string nameOfCustomer,String phone, List<WidgetData> drink,List<string> quantity, DateTime date,String total)
         {

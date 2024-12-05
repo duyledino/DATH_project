@@ -16,7 +16,8 @@ namespace DATH_project
         private Functional func = new Functional();
         private OrderForm orderForm = new OrderForm();
         private List<WidgetData> getData = new List<WidgetData>();
-        private List<order> orders = new List<order>(); 
+        private List<order> posOrders = new List<order>();
+        private List<order> qrOrdes = new List<order>();
         public Statistics()
         {
             InitializeComponent();
@@ -32,7 +33,21 @@ namespace DATH_project
         private bool updateData(out List<WidgetData> data)
             //done
         {
-            if (orderForm.readFile("Product.dat", out data) && func.readFile("orders.dat", out orders))
+            List<order> orders = new List<order>();
+            bool readProduct = orderForm.readFile("Product.dat", out data);
+            bool readPosOrder = func.readFile("posOrders.dat", out posOrders);
+            bool readQrOrder = func.readFile("qrData.dat",out qrOrdes);
+            if(readPosOrder==true)
+            {
+                foreach (order o in posOrders)
+                {
+                    orders.Add(o);
+                }
+            }
+            if(readQrOrder==true) 
+                foreach (order o in qrOrdes) orders.Add(o);
+
+            if ((readPosOrder || readQrOrder) && readProduct)
             {
                 List<WidgetData> temp = data;
                 foreach(WidgetData w in temp)

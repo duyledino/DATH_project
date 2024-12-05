@@ -60,7 +60,11 @@ namespace DATH_project
 
         private void ManageInterface_Load(object sender, EventArgs e)
         {
+            Functional functional = new Functional();
             showName.Text = $"Xin chào Sếp: {temp}";
+            //if(functional.readFile())
+
         }
+
     }
 }

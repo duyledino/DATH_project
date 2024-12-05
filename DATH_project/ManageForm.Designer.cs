@@ -44,11 +44,14 @@
             this.print = new System.Windows.Forms.Button();
             this.receiptShow = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.messyBox = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             saveData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.messyBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveData
@@ -227,12 +230,36 @@
             this.panel1.Size = new System.Drawing.Size(1157, 100);
             this.panel1.TabIndex = 12;
             // 
+            // messyBox
+            // 
+            this.messyBox.Controls.Add(this.label1);
+            this.messyBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messyBox.Location = new System.Drawing.Point(0, 0);
+            this.messyBox.Name = "messyBox";
+            this.messyBox.Size = new System.Drawing.Size(1157, 578);
+            this.messyBox.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(320, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(542, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chưa có dữ liệu sản phẩm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1157, 578);
+            this.Controls.Add(this.messyBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.receiptShow);
             this.Controls.Add(this.dataGridView1);
@@ -245,6 +272,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.messyBox.ResumeLayout(false);
+            this.messyBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -264,6 +293,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDate;
+        private System.Windows.Forms.Panel messyBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

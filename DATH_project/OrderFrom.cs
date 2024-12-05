@@ -163,6 +163,7 @@ namespace DATH_project
             {
                 dataGridView1.Rows.Clear();
                 form2.Received(cart, quantity, orderTime);
+                cart.Clear();
                 total.Text = "0vnd";
                 MessageBox.Show("Mua Hàng thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }

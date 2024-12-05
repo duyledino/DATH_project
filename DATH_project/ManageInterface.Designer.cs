@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.showName = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +57,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 633);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AllowDrop = true;
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(761, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(216, 32);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Done";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // showName
             // 
@@ -126,6 +139,7 @@
             // panelBody
             // 
             this.panelBody.BackColor = System.Drawing.Color.Teal;
+            this.panelBody.Controls.Add(this.label2);
             this.panelBody.Controls.Add(this.pictureBox2);
             this.panelBody.Controls.Add(this.label1);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -188,5 +202,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label showName;
+        private System.Windows.Forms.Label label2;
     }
 }

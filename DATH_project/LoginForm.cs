@@ -29,7 +29,7 @@ namespace DATH_project
         }
         private void checkLogin()
         {
-            if (userName.Text == "trasuamenau123" && Pass.Text == "traSua2k4")
+            if (userName.Text == "trasuamenau123" && Pass.Text == "123456")
             {
                 Pass.Text = "";
                 this.Hide();

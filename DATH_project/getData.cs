@@ -13,32 +13,33 @@ using Google.Apis.Sheets.v4.Data;
 
 namespace DATH_project
 {
+    //bổ sung ghi dữ liệu
     public class getData
     {
         static readonly string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
         static readonly string ApplicationName = "Your Application Name";
         static readonly string SpreadsheetId = "1J6Z6nuvSYQQPOrFUqMHbc08EbTdaJrrqVJQ3TxSX8lI";
-        static readonly string SheetName = "Form Responses 1"; // Adjust the sheet name as needed
+        static readonly string SheetName = "Form Responses 1"; // Tên của sheet
         static SheetsService service;
         public void get(List<order> list)
         {
             GoogleCredential credential;
 
-            // Load the credentials from a JSON file
+            // Load xác thực (credentials) từ file JSON
             using (var stream = new FileStream("..\\..\\..\\..\\json\\menu-439207-d7e027343471.json", FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleCredential.FromStream(stream)
                     .CreateScoped(Scopes);
             }
 
-            // Create the Google Sheets API service
+            // tạo dịch vụ google sheet API
             service = new SheetsService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
 
-            // Read data from the Google Sheet
+            // Đọc dữ liêu từ google sheet
             ReadEntries(list);
         }
         public double UpdateId(List<order> orders)

@@ -119,24 +119,6 @@
     <Compile Include="Decentralization.Designer.cs">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drinks\Coffe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Drinks\Coffe.Designer.cs">
-      <DependentUpon>Coffe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Drinks\MilkTea.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Drinks\MilkTea.Designer.cs">
-      <DependentUpon>MilkTea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Drinks\TeaFruit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Drinks\TeaFruit.Designer.cs">
-      <DependentUpon>TeaFruit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="ManageForm.cs">
       <SubType>Form</SubType>
@@ -202,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Drinks\Coffe.resx">
-      <DependentUpon>Coffe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>

@@ -13,6 +13,7 @@ using DATH_project.Components;
 
 namespace DATH_project
 {
+    //bổ sung thêm xóa, sửa
     public partial class ManageForm : System.Windows.Forms.Form
     {
         private List<order> orders;
@@ -56,6 +57,12 @@ namespace DATH_project
         private void Form1_Load(object sender, EventArgs e)
         {
             of = new OrderForm();
+            List<WidgetData> temp;
+            if(!of.readFile("Product.dat", out temp))
+            {
+                messyBox.Visible = true;
+                messyBox.BringToFront();
+            }else messyBox.Visible=false;
             orders = new List<order>();
             if (FindText.Text == "")
             {
@@ -75,7 +82,9 @@ namespace DATH_project
         {
             getData mydata = new getData();
             mydata.get(qrOrders);
-            if (func.readFile("qrData.dat", out qrOrders) && func.readFile("posOrders.dat", out posOrders))
+            bool readQR = func.readFile("qrData.dat", out qrOrders);
+            bool readPos = func.readFile("posOrders.dat", out posOrders);
+            if ( readQR || readPos )
             {
                 orders.Clear();
                 foreach (order o in qrOrders)
